@@ -1,6 +1,6 @@
+import React, { useState } from 'react'
 import { DeviceHub, Mail, Notifications } from '@mui/icons-material'
-import { AppBar, styled, Toolbar, Typography, Box, InputBase, Badge, Avatar } from '@mui/material'
-import React from 'react'
+import { AppBar, styled, Toolbar, Typography, Box, InputBase, Badge, Avatar, Menu, MenuItem } from '@mui/material'
 
 const StyledToolbar = styled(Toolbar)({
     display: "flex",
@@ -33,6 +33,9 @@ const UserBox = styled(Box)(({ theme }) => ({
 }))
 
 export const Navbar = () => {
+
+    const [open, setOpen] = useState(false)
+
   return (
     <AppBar position="sticky">
         <StyledToolbar>
@@ -55,16 +58,34 @@ export const Navbar = () => {
                 <Avatar
                     sx={{ width: 30, height: 30, cursor: "pointer" }}
                     src="https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    onClick={() => setOpen(!open)}
                 />
             </Icons>
             <UserBox>
                 <Avatar
                     sx={{ width: 30, height: 30, cursor: "pointer" }}
                     src="https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    onClick={() => setOpen(!open)}
                 />
                 <Typography variant="span">John</Typography>
             </UserBox>
         </StyledToolbar>
+        <Menu
+            open={open}
+            onClose={() => setOpen(!open)}
+            anchorOrigin={{
+                vertical: "top",
+                horizontal: "right"
+            }}
+            transformOrigin={{
+                vertical: "top",
+                horizontal: "right"
+            }}
+        >
+            <MenuItem>Profile</MenuItem>
+            <MenuItem>My account</MenuItem>
+            <MenuItem>Logout</MenuItem>
+        </Menu>
     </AppBar>
   )
 }
