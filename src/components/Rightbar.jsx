@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, AvatarGroup, Box, Divider, ImageList, ImageListItem, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material'
 
-export const Rightbar = () => {
+const Rightbar = () => {
   return (
     <Box
         flex={2}
@@ -123,3 +123,5 @@ export const Rightbar = () => {
     </Box>
   )
 }
+
+export default Rightbar

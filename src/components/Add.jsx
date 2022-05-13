@@ -13,7 +13,7 @@ const UserBox = styled(Box)({
     alignItems: "center"
 })
 
-export const Add = () => {
+const Add = () => {
 
     const [open, setOpen] = useState(false)
 
@@ -72,3 +72,5 @@ export const Add = () => {
         </StyledModal>
     </>)
 }
+
+export default Add

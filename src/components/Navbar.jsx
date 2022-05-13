@@ -32,7 +32,7 @@ const UserBox = styled(Box)(({ theme }) => ({
     }
 }))
 
-export const Navbar = () => {
+const Navbar = () => {
 
     const [open, setOpen] = useState(false)
 
@@ -89,3 +89,5 @@ export const Navbar = () => {
     </AppBar>
   )
 }
+
+export default Navbar
